@@ -10,5 +10,5 @@ fn main() {
     let user_guess = Guess::from_string(&user_input)
         .expect("Guess should be a positive number");
 
-    println!("{:?}", user_guess.value());
+    println!("{}", user_guess.value());
 }

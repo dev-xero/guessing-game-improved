@@ -2,11 +2,15 @@ mod input;
 mod guess;
 
 use guess::Guess;
+use rand::{Rng, thread_rng};
 
 fn main() {
     println!("Guessing Game: Improved");
 
     loop {
+        let mut rng = thread_rng();
+        let secret_num = rng.gen_range(1..=100);
+
         let user_input = input::get_input(&"Your guess")
             .expect("Failed to read user input");
 

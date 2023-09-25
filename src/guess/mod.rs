@@ -1,8 +1,15 @@
 use core::panic;
+use std::cmp::Ordering;
 use std::num::ParseIntError;
 
 pub struct Guess {
     value: u32
+}
+
+pub enum GuessStatus {
+    Correct,
+    Greater,
+    Lesser
 }
 
 impl Guess {
@@ -14,6 +21,14 @@ impl Guess {
         }
 
         Ok(Guess { value: guess })
+    }
+
+    pub fn check(&self, secret_num: u32) -> GuessStatus {
+        match self.value.cmp(&secret_num) {
+            Ordering::Equal => GuessStatus::Correct,
+            Ordering::Greater => GuessStatus::Greater,
+            Ordering::Less => GuessStatus::Lesser
+        }
     }
 
     pub fn value(&self) -> u32 {

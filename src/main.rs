@@ -16,6 +16,8 @@ fn show_results(guess_status: &GuessStatus) {
 
 fn main() {
     println!("Guessing Game: Improved");
+    println!("The computer will choose a number between 1 and 100.\nYour objective is to correctly guess this number. Good Luck!");
+    println!("--------------------");
 
     loop {
         let mut rng = thread_rng();

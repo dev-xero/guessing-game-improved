@@ -30,8 +30,4 @@ impl Guess {
             Ordering::Less => GuessStatus::Lesser
         }
     }
-
-    pub fn value(&self) -> u32 {
-        self.value
-    }
 }

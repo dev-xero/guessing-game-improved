@@ -1,8 +1,18 @@
 mod input;
 mod guess;
 
-use guess::Guess;
+use guess::{Guess, GuessStatus};
 use rand::{Rng, thread_rng};
+
+fn show_results(guess_status: &GuessStatus) {
+    match guess_status {
+        GuessStatus::Correct => println!("Correct!"),
+        GuessStatus::Greater => println!("Too High!"),
+        GuessStatus::Lesser => println!("Too Low!")
+    }
+
+    println!("")
+}
 
 fn main() {
     println!("Guessing Game: Improved");
@@ -22,7 +32,8 @@ fn main() {
             }
         };
 
-        println!("{}", user_guess.value());
-        println!("")
+        let user_result = user_guess.check(secret_num);
+
+        show_results(&user_result);
     }
 }

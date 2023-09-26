@@ -8,7 +8,7 @@
   \_____|\__,_|\___||___/___(_)
 ```
 An improved implementation of the original guessing game, still written in Rust.  
-You have to guess a number between 1 and 100 and the program tells you whether you got it right or not, and repeats infinitely (or more likely till you run out of RAM).
+You have to guess a number between 1 and 100 and the program tells you whether you got it right or not and repeats this infinitely (or more likely till you run out of RAM).
 
 ## Improvements
 1. Separated input and guessing logic to different modules.

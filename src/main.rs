@@ -4,6 +4,19 @@ mod guess;
 use guess::{Guess, GuessStatus};
 use rand::{Rng, thread_rng};
 
+fn display_title() {
+    println!("     _____                     _ 
+    / ____|                   | |
+   | |  __ _   _  ___  ___ ___| |
+   | | |_ | | | |/ _ \\\\/ __/ __| |
+   | |__| | |_| |  __/\\__ \\__ \\_|
+    \\_____|\\__,_|\\___||___/___(_)");
+
+    println!("\nGuessing Game: Improved\n");
+    println!("The computer will choose a number between 1 and 100.\nYour objective is to correctly guess this number. Good Luck!");
+    println!("--------------------\n");
+}
+
 fn show_results(guess_status: &GuessStatus) {
     match guess_status {
         GuessStatus::Correct => println!("Correct!"),
@@ -15,9 +28,7 @@ fn show_results(guess_status: &GuessStatus) {
 }
 
 fn main() {
-    println!("Guessing Game: Improved");
-    println!("The computer will choose a number between 1 and 100.\nYour objective is to correctly guess this number. Good Luck!");
-    println!("--------------------");
+    display_title();
 
     loop {
         let mut rng = thread_rng();

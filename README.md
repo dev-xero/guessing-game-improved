@@ -11,10 +11,10 @@ An improved implementation of the original guessing game, still written in Rust.
 You have to guess a number between 1 and 100 and the program tells you whether you got it right or not, and repeats infinitely (or more likely till you run out of RAM).
 
 ## Improvements
-1. Separated input and guessing logic to different modules
-2. Specific functions return a `Result<T, E>` which allows more flexibility to the calling code
-3. Exit the program if the guess is not in the specified range (could instead just repeat)
-4. Added cool ASCII art
+1. Separated input and guessing logic to different modules.
+2. Specific functions return a `Result<T, E>` which allows more flexibility to the calling code.
+3. Exit the program if the guess is not in the specified range (could instead just repeat).
+4. Added cool ASCII art.
 
 ## Implementations
   ### 1. Guessing Functionality
